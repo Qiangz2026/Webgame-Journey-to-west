@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 1 - Journey to the West</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/game.js" defer></script>
+</head>
+<body>
+  <div id="chapter1-container" class="container">
+    <!-- chapter1-page1 -->
+    <section class="story-step" data-step="1">
+      <h2>CHAPTER - 1</h2>
+
+      <div class="image-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWf5ixxdZKkPEKOS9Xs8cztoJWUWrzHjBG2t0QJlbO78u61M3StFRjIuy1&s=10" alt="Five Elements Mountain">
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="next-step-btn" data-next="2">START</button>
+      </div>
+    </section>
+
+    <!-- chapter1-page2 -->
+     <section class="story-step" data-step="2" style="display: none;">
+      <!-- set status button -->
+      <div class="top-bar">
+        <button type="button" class="status-btn">STATUS</button>
+      </div>
+
+      <!-- show arrived text -->
+      <div class="location-info">
+        <h2>YOU Arrived</h2>
+        <h3>HAND MOUNTAIN</h3>
+      </div>
+
+      <!-- show description of chapter1 -->
+      <div class="description-area">
+        <p>
+          <strong>DESCRIPTION :</strong>
+          Beneath the towering peaks of Hand Mountain, Sun Wukong has been sealed for five hundred years. 
+          Approach carefully and listen to his plea to earn his trust on your journey west.
+        </p>
+      </div>
+
+      <!-- 推进剧情按钮（跳到 Step 3） -->
+      <div class="button-group">
+        <button type="button" class="next-step-btn" data-next="3">CONTINUE</button>
+      </div>
+    </section>
+
+    <!--page3: Guanyin appeared and tell something--> 
+    <section class="story-step" data-step="3">
+      <div class="event-banner">
+        <h3>Godess Guanyin Appeared</h3>
+      </div>
+
+      <div class="dialogue-row">
+        <div class="character-box">
+          <img src="/static/pictures/guanyin.jpeg" alt="Goddess Guanyin">
+        </div>
+
+        <div class="dialogue-box">
+          <p class="dialogue-title"><strong>INTRODUCE</strong></p>
+          <p class="dialogue-text">
+            I am Guanyin. Beneath this mountain lies Sun Wukong, once rebellious yet destined to protect the pilgrim on the journey to the Western Heaven.
+          </p>
+        </div>
+      </div>
+
+      <!-- 推进剧情按钮（跳到 Step 4） -->
+      <div class="button-group">
+        <button type="button" class="next-step-btn" data-next="4">CONTINUE</button>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

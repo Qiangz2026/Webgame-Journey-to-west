@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Journey to the West</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/game.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="game-header">
+      <h1>JOURNEY TO THE WEST</h1>
+    </header>
+
+    <section id="home-screen" class="card">
+      <h2>HOME PAGE</h2>
+      <p id="welcome-text" class="subtitle">Welcome, Traveler!</p>
+
+      <div class="button-group">
+        <button id="start-game-btn" type="button" onclick="window.location.href='/chapter-1'">START GAME</button>
+        <button id="resume-game-btn" type="button">RESUME GAME</button>
+        <button id="how-to-play-btn" type="button" onclick="window.location.href='/guide'">HOW TO PLAY</button>
+        <button id="exit-home-btn" type="button" onclick="window.location.href='/'">EXIT</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journey to the West</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/game.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="game-header">
+      <h1>JOURNEY TO THE WEST</h1>
+    </header>
+
+    <!-- 1. Player Information Entry Page -->
+    <section id="intro-screen" class="card">
+      <img src="https://pic.cyol.com/img/20240912/img_9601fb8fbfe57966b04b518e87f416f2c6dd.jpeg" alt="Game picture">
+      
+      <p class="subtitle">Before we begin, please let us know a little about you...</p>
+
+      <div class="form-group">
+        <label for="player-age">ENTER AGE:</label>
+        <input type="number" id="player-age" min="1" max="120" placeholder="e.g. 18" />
+      </div>
+
+      <div class="form-group">
+        <label for="player-name">ENTER NAME:</label>
+        <input type="text" id="player-name" placeholder="Enter your name" />
+      </div>
+
+      <p id="form-error" class="error-text hidden"></p>
+
+      <div class="button-group">
+        <button id="submit-info-btn" type="button">OK</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

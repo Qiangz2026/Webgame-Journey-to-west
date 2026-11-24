@@ -69,6 +69,21 @@ function showStep(stepNumber){
         }
     }
 }
+
+const chapter1 = document.querySelector("#chapter1-container");
+if (chapter1) {
+  showStep(1);
+  chapter1.addEventListener("click", function (event) {
+    const btn = event.target.closest(".next-step-btn");
+    if (!btn || !chapter1.contains(btn)) return;
+
+    const nextStep = btn.dataset.next;
+    if (nextStep) {
+      showStep(nextStep);
+    }
+  });
+}
+/*
 const chapter1 = document.querySelector("#chapter1-container");
 if (chapter1){
     showStep(1);
@@ -78,5 +93,12 @@ if (chapter1){
         showStep(nextStep);
     }})
 }
+*/
 
-
+document.addEventListener("click", function(event){
+  const btn = event.target.closest(".chapter2-btn");
+  if (!btn) {
+    return;
+  }
+  window.location.href = "/chapter-2";
+});

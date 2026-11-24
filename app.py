@@ -16,6 +16,10 @@ def home():
 def chapterOne():
     return send_from_directory("static/html", "chapterOne.html")
 
+@app.route("/chapter-2")
+def chapterTwo():
+    return send_from_directory("static/html", "chapterTwo.html")
+
 @app.route("/guide")
 def guide():
     return send_from_directory("static/html", "guide.html")

@@ -21,11 +21,6 @@ def guide():
     return send_from_directory("static/html", "guide.html")
 
 
-# 后面写到第一章时，可以把下面这段取消注释：
-# @app.route("/chapter1")
-# def chapter1():
-#     return send_from_directory("static", "chapter1.html")
-
 
 @app.route("/static/<path:filename>")
 def serve_static(filename):

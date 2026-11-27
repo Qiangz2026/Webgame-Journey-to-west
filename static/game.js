@@ -68,7 +68,7 @@ if (startGameBtn) {
   startGameBtn.addEventListener("click", function () {
     sessionStorage.removeItem("chapter1CurrentStep");
     sessionStorage.removeItem("chapter2CurrentStep");
-    sessionStorage.removeItem("chapter2CurrentStep");
+    sessionStorage.removeItem("chapter3CurrentStep");
     sessionStorage.setItem("currentChapterUrl", "/chapter-1");//record that the user is now entering Chapter 1.
   });
 }
@@ -110,11 +110,12 @@ function setupChapterSteps(containerId, storageKey) {
   });
 }
 
-// 新增：分别启动第一章和第二章
+//Initialize the step logic for Chapter1-3 separately (each using its own independent container and `sessionStorage` key).
 setupChapterSteps("#chapter1-container", "chapter1CurrentStep");
 setupChapterSteps("#chapter2-container", "chapter2CurrentStep");
 setupChapterSteps("#chapter3-container", "chapter3CurrentStep");
 
+//When a button "statusSS" on any page is clicked, record the current page URL and navigate to the status page.
 document.addEventListener("click", function (event) {
   const statusBtn = event.target.closest(".status-btn");//find status button
   if (!statusBtn) {
@@ -138,7 +139,7 @@ document.addEventListener("click", function(event){
     if (returnUrl){
       window.location.href = returnUrl;
     }else {
-      window.location.href = "/static/html/chapterOne.html";//wait change to current chapter html
+      window.location.href = "/chapter1";//wait change to current chapter html
     }
   }else if (id === "save-data-btn"){
     alert("Game data saved.");//just show message,later add data store.
@@ -155,4 +156,15 @@ document.addEventListener("click", function(event){
   sessionStorage.removeItem("chapter1CurrentStep");
   sessionStorage.setItem("chapter2CurrentStep", "1");
   window.location.href = "/chapter-2";
+});
+
+document.addEventListener("click", function (event) {
+  const chapter3Btn = event.target.closest(".chapter3-btn");
+  if (!chapter3Btn) {
+    return;
+  }
+  sessionStorage.removeItem("chapter1CurrentStep");
+  sessionStorage.removeItem("chapter2CurrentStep");
+  sessionStorage.setItem("chapter3CurrentStep", "1");
+  window.location.href = "/chapter-3"; 
 });

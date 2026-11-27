@@ -8,18 +8,208 @@
 </head>
 <body>
   <div id="chapter2-container" class="container">
-    <!-- chapter1-page1 -->
+    <!-- chapter2-page1 -->
     <section class="story-step" data-step="1">
       <h2>CHAPTER - 2: Meet the Pigsy -- Bajay</h2>
 
       <div class="image-box">
-        <img src="/static/pictures/gaolaozhuang.jpeg" alt="Gao lao zhuang">
+        <img src="/static/pictures/gao_village.png" alt="gao_village">
       </div>
 
       <div class="button-group">
         <button type="button" class="next-step-btn" data-next="2">START</button>
       </div>
     </section>
+
+    <!-- chapter2-page2 -->
+     <section class="story-step" data-step="2">
+      <!-- show arrived text -->
+      <div class="location-info">
+        <h2>YOU Arrived</h2>
+        <h3>GAO VILLAGE</h3>
+      </div>
+
+      <!-- show description of chapter2 -->
+      <div class="description-area">
+        <p>
+          <strong>DESCRIPTION :</strong>
+          The villagers complain about a monster with a pig-like face who has taken over a household and ruined the farmland.
+          Some said that he was once a god from Heaven, exiled to human world for misbehavior.
+          Despite his terrifying appearance, he has a soft heart and is loyal to people he loves.
+        </p>
+      </div>
+
+      <!-- button to page3 -->
+      <div class="button-group">
+        <button type="button" class="next-step-btn" data-next="3">CONTINUE</button>
+      </div>
+    </section>
+
+    <!--page3: --> 
+    <section class="story-step" data-step="3">
+      <div class="event-banner">
+        <h3>some text</h3>
+      </div>
+
+      <!-- button to page4 -->
+      <div class="button-group">
+        <button type="button" class="next-step-btn" data-next="4">CONTINUE</button>
+      </div>
+    </section>
+
+    <!-- show page4 -->
+    <section class="story-step" data-step="4">
+      <!-- set status button -->
+      <div class="top-bar">
+        <button type="button" class="status-btn">STATUS</button>
+      </div>
+
+      <div class="scene-row">
+        <div class="scene-box">
+          <img src="/static/pictures/steamed_Bun_Xuanzang.png" alt="Steamed Bun on the ground...">
+        </div>
+
+        <div class="choice-box">
+          <p class="scene-text">Steamed Bun on the ground...</p>
+
+          <div class="choice-buttons">
+            <button type="button" class="next-step-btn choice-btn" data-next="5">Ignore</button>
+            <button type="button" class="next-step-btn choice-btn" data-next="5">pick it</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page5 -->
+    <section class="story-step" data-step="5">
+      <!-- set status button -->
+      <div class="top-bar">
+        <button type="button" class="status-btn">STATUS</button>
+      </div>
+
+      <div class="scene-row">
+        <div class="scene-box">
+          <img src="/static/pictures/Xuanzang_meet_Pigsy.png" alt="Xuanzang meets Pigsy">
+        </div>
+
+        <div class="choice-box">
+          <p class="scene-text">I am so hungry now.</p>
+
+          <div class="choice-buttons">
+            <button type="button" class="next-step-btn choice-btn" data-next="6a">Talk to him</button>
+            <button type="button" class="next-step-btn choice-btn" data-next="6b">Give him the Bun</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6a page-rejection -->
+    <section class="story-step" data-step="6a">
+      <!-- set status button -->
+      <div class="top-bar">
+        <button type="button" class="status-btn">STATUS</button>
+      </div>
+
+      <div class="scene-row">
+        <div class="scene-box">
+          <img src="/static/pictures/angry_monkey.jpeg" alt="Monkey rejection">
+        </div>
+
+        <div class="choice-box">
+          <p class="scene-text">Rude words</p>
+
+          <div class="choice-buttons">
+            <button type="button" class="next-step-btn choice-btn" data-next="4">Please wait</button>
+            <button type="button" class="next-step-btn choice-btn" data-next="7d">End and leave</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--6b page-dialogue-->
+    <section class="story-step" data-step="6b">
+      <!-- set status button -->
+      <div class="top-bar">
+        <button type="button" class="status-btn">STATUS</button>
+      </div>
+
+      <div class="scene-row">
+        <div class="scene-box">
+          <img src="/static/pictures/monkey_dialogue.jpg" alt="Monkey dialogue">
+        </div>
+
+        <div class="choice-box">
+          <p class="scene-text">You are not bad person. I used to have friends who care for me.</p>
+
+          <div class="choice-buttons">
+            <button type="button" class="next-step-btn choice-btn" data-next="7a">
+              <span class="option-label">A:</span>
+              <span class="option-desc">Show respect for his historic honor, show empathy to his experience, and invite him to seek a greater destiny with you.</span>
+            </button>
+            <button type="button" class="next-step-btn choice-btn" data-next="7b">
+              <span class="option-label">B:</span>
+              <span class="option-desc">Offer him a practical contract: full meals through the journey and permanent position in Heaven's official department after the journey.</span>
+            </button>
+            <button type="button" class="next-step-btn choice-btn" data-next="7c">
+              <span class="option-label">C:</span>
+              <span class="option-desc">Threaten him and forbid him from seeking a family.</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7A：player choice-show chapter1 result -->
+    <section class="story-step" data-step="7a" style="display: none;">
+      <div class="choice-box">
+        <h2 class="chapter-title">Chapter 2 Complete</h2>
+        <p class="scene-text">A. TRUST SCORE + 40</p>
+        <p class="scene-text">Pigsy joins the team.</p>
+
+        <div class="choice-buttons">
+          <button type="button" class="choice-btn chapter3-btn">CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7B：player choice-show chapter1 result -->
+    <section class="story-step" data-step="7b" style="display: none;">
+      <div class="choice-box">
+        <h2 class="chapter-title">Chapter 2 Complete</h2>
+        <p class="scene-text">B. TRUST SCORE + 20</p>
+        <p class="scene-text">Pigsy joins the team.</p>
+
+        <div class="choice-buttons">
+          <button type="button" class="choice-btn chapter3-btn">CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7c：player choice-show chapter1 result -->
+    <section class="story-step" data-step="7c" style="display: none;">
+      <div class="choice-box">
+        <h2 class="chapter-title">Chapter 2 Complete</h2>
+        <p class="scene-text">C. TRUST SCORE + 10</p>
+        <p class="scene-text">Pigsy joins the team.</p>
+
+        <div class="choice-buttons">
+          <button type="button" class="choice-btn chapter3-btn">CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7D：Xuanzang leave the Gao village alone. -->
+    <section class="story-step" data-step="7d" style="display: none;">
+      <div class="choice-box">
+        <h2 class="chapter-title">Chapter 2 Complete</h2>
+        <p class="scene-text">You leave the Gao village alone.</p>
+
+        <div class="choice-buttons">
+          <button type="button" class="choice-btn chapter3-btn">CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
   </div>
 </body>
 </html>

@@ -20,6 +20,10 @@ def chapterOne():
 def chapterTwo():
     return send_from_directory("static/html", "chapterTwo.html")
 
+@app.route("/chapter-3")
+def chapterThree():
+    return send_from_directory("static/html", "chapterThree.html")
+
 @app.route("/guide")
 def guide():
     return send_from_directory("static/html", "guide.html")

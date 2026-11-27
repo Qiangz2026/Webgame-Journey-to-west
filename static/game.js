@@ -37,6 +37,7 @@ function handleInfoSubmit() {
   window.location.href = "/home";
 }
 
+//function:Bind a click event to the "OK" button on the index page.
 function jumpPage(){
   const submitInfoBtn = document.querySelector("#submit-info-btn");
   if (!submitInfoBtn){
@@ -47,26 +48,28 @@ function jumpPage(){
 }
 jumpPage();
 
-// home page: show welcome player function
+//Home page:Retrieve player information from local storage and display the name in the welcome message.
 function showWelcomeName(){
     const welcomeText = document.querySelector("#welcome-text");//find the element of welcome player
     if (!welcomeText){
         return;
     }
     const savedData = localStorage.getItem("journeyPlayerState");
-    const savedPlayer = JSON.parse(savedData);
+    const savedPlayer = JSON.parse(savedData);//Parse stored player information into JSON format
     if (savedPlayer && savedPlayer.name){
         welcomeText.textContent = "Welcome " + savedPlayer.name + " !";
     }
 }
 showWelcomeName();
 
+//Home page: When "START GAME" is clicked, clear the step count from previous chapters
 const startGameBtn = document.querySelector("#start-game-btn");
 if (startGameBtn) {
   startGameBtn.addEventListener("click", function () {
     sessionStorage.removeItem("chapter1CurrentStep");
     sessionStorage.removeItem("chapter2CurrentStep");
-    sessionStorage.setItem("currentChapterUrl", "/chapter-1");
+    sessionStorage.removeItem("chapter2CurrentStep");
+    sessionStorage.setItem("currentChapterUrl", "/chapter-1");//record that the user is now entering Chapter 1.
   });
 }
 
@@ -110,17 +113,8 @@ function setupChapterSteps(containerId, storageKey) {
 // 新增：分别启动第一章和第二章
 setupChapterSteps("#chapter1-container", "chapter1CurrentStep");
 setupChapterSteps("#chapter2-container", "chapter2CurrentStep");
-/*
-const chapter1 = document.querySelector("#chapter1-container");
-if (chapter1){
-    showStep(1);
-    chapter1.addEventListener("click", function(event){
-        if (event.target.classList.contains("next-step-btn")) {
-        const nextStep = event.target.dataset.next; 
-        showStep(nextStep);
-    }})
-}
-*/
+setupChapterSteps("#chapter3-container", "chapter3CurrentStep");
+
 document.addEventListener("click", function (event) {
   const statusBtn = event.target.closest(".status-btn");//find status button
   if (!statusBtn) {

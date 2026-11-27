@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Status</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/game.js" defer></script>
+</head>
+<body>
+  <main class="status-page" id="status-container">
+    <!-- Top title -->
+    <header class="status-header">
+      <h1 class="status-title">PLAYER STATUS</h1>
+    </header>
+
+    <hr class="status-divider">
+
+    <!-- status information area -->
+    <section class="status-details">
+      <div class="status-row">
+        <span class="status-label">LOCATION : you are now in :</span>
+        <div class="status-value-box" id="status-location"></div>
+      </div>
+
+      <div class="status-row">
+        <span class="status-label">MENTEE :</span>
+        <div class="status-value-box" id="status-mentee"></div>
+      </div>
+
+      <div class="status-row">
+        <span class="status-label">TRUST POINTS EARNED :</span>
+        <div class="status-value-box" id="status-trust-points"></div>
+      </div>
+
+      <div class="status-row status-inventory-row">
+        <span class="status-label">INVENTORY :</span>
+        <div class="inventory-slots" id="status-inventory">
+          <div class="inventory-slot" data-slot="1"></div>
+          <div class="inventory-slot" data-slot="2"></div>
+          <div class="inventory-slot" data-slot="3"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="status-divider">
+
+    <!-- Three button linked to somewhere -->
+    <footer class="status-actions">
+      <button type="button" class="back-to-game-btn" id="back-to-game-btn">BACK TO GAME</button>
+      <button type="button" class="save-data-btn" id="save-data-btn">SAVE DATA</button>
+      <button type="button" class="exit-home-btn" id="exit-to-home-btn">EXIT</button>
+    </footer>
+  </main>
+</body>
+</html>

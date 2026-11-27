@@ -24,6 +24,10 @@ def chapterTwo():
 def guide():
     return send_from_directory("static/html", "guide.html")
 
+@app.route("/status")
+def status():
+    return send_from_directory("static/html", "status.html")
+
 
 
 @app.route("/static/<path:filename>")

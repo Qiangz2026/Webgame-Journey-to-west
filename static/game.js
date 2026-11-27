@@ -1,34 +1,39 @@
+//Define an initial player state object to store the player's information
 const playerState = {
   name: "",
   age: 0
 };
 //index page:Determine whether the age meets the game's requirements
 function handleInfoSubmit() {
-  const ageInput = document.querySelector("#player-age");
-  const nameInput = document.querySelector("#player-name");
-  const formError = document.querySelector("#form-error");
-  const ageValue = Number(ageInput.value);
-  const nameValue = nameInput.value.trim();
+  const ageInput = document.querySelector("#player-age");//Get the element for the age input field
+  const nameInput = document.querySelector("#player-name");//Get the element for the name input field
+  const formError = document.querySelector("#form-error");//Retrieve the text element used for displaying error messages
+  const ageValue = Number(ageInput.value);//Convert the age input value into a number
+  const nameValue = nameInput.value.trim();//Remove any extra spaces from the beginning and end of the name input value.
 
+//If the age is empty or less than or equal to 0, or if the name is empty, display an error message and stop the submission.
   if (!ageInput.value || ageValue <= 0 || nameValue === "") {
   formError.textContent = "Please enter a valid age or name.";
   formError.classList.remove("hidden");
   return;
   }
 
-  formError.classList.add("hidden");
+  formError.classList.add("hidden");//Hide the error message when the input is valid.
 
+//Check whether the age is under 12; if it is, display a pop-up alert.
   if (ageValue < 12) {
     alert("Sorry, this game is not suitable for minors (under 12).");
-    ageInput.value = "";
-    nameInput.value = "";
-    ageInput.focus();
+    ageInput.value = "";//clear the age input field.
+    nameInput.value = "";//clear the name input field.
+    ageInput.focus();//focus on the age input box again.
     return;
   }
-  playerState.age = ageValue;
-  playerState.name = nameValue;
+  playerState.age = ageValue;//Store the validated age in playerState.
+  playerState.name = nameValue;//Store the validated name in playerState.
+//Serialize player information into a JSON string and store it in `localStorage` to persist it across pages.
   localStorage.setItem("journeyPlayerState", JSON.stringify(playerState));
 
+//Navigate to the home route /home
   window.location.href = "/home";
 }
 
@@ -44,7 +49,7 @@ jumpPage();
 
 // home page: show welcome player function
 function showWelcomeName(){
-    const welcomeText = document.querySelector("#welcome-text");
+    const welcomeText = document.querySelector("#welcome-text");//find the element of welcome player
     if (!welcomeText){
         return;
     }
